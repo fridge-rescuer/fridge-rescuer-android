@@ -1,12 +1,14 @@
 package com.fridgerescuer.presentation.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import kotlinx.coroutines.Job
 
-abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding>: AppCompatActivity() {
+abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding>: Fragment() {
 
     abstract val viewModel: VM
 
@@ -15,14 +17,19 @@ abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding>: AppCompatActivi
 
     private lateinit var fetchJob: Job
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = getViewBinding()
-        setContentView(binding.root)
-        initState()
+        return binding.root
     }
 
     open fun initState() {
+        arguments?.let {
+            viewModel.storeState(it)
+        }
         initViews()
         fetchJob = viewModel.fetchData()
         observeData()
@@ -32,10 +39,10 @@ abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding>: AppCompatActivi
 
     abstract fun observeData()
 
-    override fun onDestroy() {
+    override fun onDestroyView() {
+        super.onDestroyView()
         if (fetchJob.isActive) {
             fetchJob.cancel()
         }
-        super.onDestroy()
     }
 }
