@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">presentation</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">홈</string>
+    <string name="title_myfridge">냉장고</string>
+    <string name="title_recipe">레시피</string>
+    <string name="title_mypage">마이</string>
 </resources>
