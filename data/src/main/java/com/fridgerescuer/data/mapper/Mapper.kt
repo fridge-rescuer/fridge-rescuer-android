@@ -10,7 +10,7 @@ fun mapperToIngrs(ingrs: List<IngrEntity>): List<Ingr> {
             it.ingr_name,
             it.exp_date,
             it.storage,
-            it.use_date
+            it.use_date,
         )
     }
 }

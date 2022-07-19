@@ -20,13 +20,13 @@ interface IngrDao {
     fun deleteAll()
     // 한줄
     @Query("DELETE FROM ingrs where id = :id")
-    fun deleteIngr(id: Short)
+    fun deleteIngr(id: Int)
 
     // 탐색 - 전체
     @Query("SELECT * FROM ingrs")
     fun getAll():List<IngrEntity>
     // 한줄
     @Query("SELECT * FROM ingrs where id = :id")
-    fun getIngr(id:Short):IngrEntity
+    fun getIngr(id:Int):IngrEntity
 
 }

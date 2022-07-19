@@ -5,8 +5,18 @@
       <map>
         <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer android/app/src/main/res/layout/activity_main.xml" value="0.26494427558257344" />
         <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/activity_main.xml" value="0.15555555555555556" />
+        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.5105" />
+        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_home_black_24dp.xml" value="0.5105" />
+        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_myfridge_black_24dp.xml" value="0.5105" />
+        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_nav_mypage_black_24dp.xml" value="0.5105" />
+        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_nav_recipe_black_24dp.xml" value="0.5105" />
+        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_navi_home_black.xml" value="0.5105" />
+        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/activity_main.xml" value="0.21495517522412388" />
+        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/fragment_home.xml" value="0.4510474561778538" />
+        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/fragment_main_myfridge.xml" value="0.4510474561778538" />
+        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/fragment_main_recipe.xml" value="0.4510474561778538" />
         <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/fragment_notifications.xml" value="0.25962512664640325" />
+        <entry key="..\:/Users/Songmo_Kang/Desktop/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/menu/bottom_nav_menu.xml" value="0.4510474561778538" />
       </map>
     </option>
   </component>
