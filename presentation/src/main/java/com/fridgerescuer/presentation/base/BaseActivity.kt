@@ -1,41 +1,39 @@
 package com.fridgerescuer.presentation.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
+import android.widget.Toast
+import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewbinding.ViewBinding
-import kotlinx.coroutines.Job
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
+import com.fridgerescuer.presentation.utils.BackPressUtil
+import io.reactivex.disposables.CompositeDisposable
 
-abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding>: AppCompatActivity() {
+abstract class BaseActivity<B: ViewDataBinding>(
+    @LayoutRes val layoutId: Int
+): AppCompatActivity() {
 
-    abstract val viewModel: VM
-
-    protected lateinit var binding: VB
-    abstract fun getViewBinding(): VB
-
-    private lateinit var fetchJob: Job
+    lateinit var binding: B
+    private val compositeDisposable = CompositeDisposable()
+    private var backPressHandler: BackPressUtil? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = getViewBinding()
-        setContentView(binding.root)
-        initState()
+        binding = DataBindingUtil.setContentView(this, layoutId)
+        binding.lifecycleOwner = this
+        backPressHandler = BackPressUtil(this)
     }
 
-    open fun initState() {
-        initViews()
-        fetchJob = viewModel.fetchData()
-        observeData()
+    protected fun showToast(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
-
-    open fun initViews() = Unit
-
-    abstract fun observeData()
 
     override fun onDestroy() {
-        if (fetchJob.isActive) {
-            fetchJob.cancel()
-        }
         super.onDestroy()
+        compositeDisposable.clear()
+    }
+
+    override fun onBackPressed() {
+        backPressHandler!!.onBackPressed()
     }
 }

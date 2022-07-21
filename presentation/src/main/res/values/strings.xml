@@ -3,5 +3,7 @@
     <string name="title_home">홈</string>
     <string name="title_myfridge">냉장고</string>
     <string name="title_recipe">레시피</string>
-    <string name="title_mypage">마이</string>
+    <string name="title_mypage">MY</string>
+
+    <string name="finish_app">앱 종료</string>
 </resources>
