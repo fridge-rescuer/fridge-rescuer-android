@@ -1,18 +1,19 @@
 package com.fridgerescuer.presentation.base
 
-import android.os.Bundle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
 abstract class BaseViewModel: ViewModel() {
 
-    protected var stateBundle: Bundle? = null
+    protected val compositeDisposable = CompositeDisposable()
 
-    open fun fetchData(): Job = viewModelScope.launch {}
+    fun addDisposable(disposable: Disposable) {
+        compositeDisposable.add(disposable)
+    }
 
-    open fun storeState(stateBundle: Bundle) {
-        this.stateBundle = stateBundle
+    override fun onCleared() {
+        compositeDisposable.clear()
+        super.onCleared()
     }
 }

@@ -4,45 +4,31 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.viewbinding.ViewBinding
-import kotlinx.coroutines.Job
 
-abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding>: Fragment() {
+abstract class BaseFragment<B: ViewDataBinding>(
+    @LayoutRes val layoutRes: Int
+): Fragment() {
 
-    abstract val viewModel: VM
-
-    protected lateinit var binding: VB
-    abstract fun getViewBinding(): VB
-
-    private lateinit var fetchJob: Job
+    lateinit var binding: B
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = getViewBinding()
+        binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         return binding.root
     }
 
-    open fun initState() {
-        arguments?.let {
-            viewModel.storeState(it)
-        }
-        initViews()
-        fetchJob = viewModel.fetchData()
-        observeData()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.lifecycleOwner = this@BaseFragment
+        initView()
+        super.onViewCreated(view, savedInstanceState)
     }
 
-    open fun initViews() = Unit
-
-    abstract fun observeData()
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        if (fetchJob.isActive) {
-            fetchJob.cancel()
-        }
-    }
+    abstract fun initView()
 }
