@@ -12,7 +12,7 @@ import com.fridgerescuer.presentation.base.BaseFragment
 import com.fridgerescuer.presentation.databinding.FragmentMainRecipeBinding
 import com.fridgerescuer.presentation.views.home.HomeViewModel
 
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class RecipeFragment: BaseFragment<FragmentMainRecipeBinding>(
     R.layout.fragment_main_recipe
 ) {
@@ -21,6 +21,8 @@ class RecipeFragment: BaseFragment<FragmentMainRecipeBinding>(
     //onViewCreated() override 에서 livedata observing, view 초기값, adapter(recyclerview, viewpager2) 설정
 
     override fun initView() {
-        TODO("Not yet implemented")
+        binding.apply {
+
+        }
     }
 }
