@@ -11,7 +11,7 @@ import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
 import com.fridgerescuer.presentation.databinding.FragmentMainMyfridgeBinding
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class MyFridgeFragment: BaseFragment<FragmentMainMyfridgeBinding>(
     R.layout.fragment_main_myfridge
 ) {

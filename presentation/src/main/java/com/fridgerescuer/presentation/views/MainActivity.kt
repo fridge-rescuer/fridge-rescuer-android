@@ -6,11 +6,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseActivity
 import com.fridgerescuer.presentation.databinding.ActivityMainBinding
-import com.fridgerescuer.presentation.utils.BackPressUtil
 import com.fridgerescuer.presentation.views.home.HomeFragment
 import com.fridgerescuer.presentation.views.myfridge.MyFridgeFragment
 import com.fridgerescuer.presentation.views.recipe.RecipeFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity: BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {

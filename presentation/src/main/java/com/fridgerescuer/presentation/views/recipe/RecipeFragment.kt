@@ -12,7 +12,7 @@ import com.fridgerescuer.presentation.base.BaseFragment
 import com.fridgerescuer.presentation.databinding.FragmentMainRecipeBinding
 import com.fridgerescuer.presentation.views.home.HomeViewModel
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class RecipeFragment: BaseFragment<FragmentMainRecipeBinding>(
     R.layout.fragment_main_recipe
 ) {
