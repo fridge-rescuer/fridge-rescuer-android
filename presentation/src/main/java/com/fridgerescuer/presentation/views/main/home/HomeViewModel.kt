@@ -1,4 +1,4 @@
-package com.fridgerescuer.presentation.views.home
+package com.fridgerescuer.presentation.views.main.home
 
 import com.fridgerescuer.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

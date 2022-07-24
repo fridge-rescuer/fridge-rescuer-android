@@ -1,15 +1,11 @@
-package com.fridgerescuer.presentation.views.myfridge
+package com.fridgerescuer.presentation.views.main.fragment
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
 import com.fridgerescuer.presentation.databinding.FragmentMainMyfridgeBinding
+import com.fridgerescuer.presentation.views.main.myfridge.MyFridgeViewModel
 
 @AndroidEntryPoint
 class MyFridgeFragment: BaseFragment<FragmentMainMyfridgeBinding>(

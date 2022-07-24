@@ -1,20 +1,15 @@
-package com.fridgerescuer.presentation.views.recipe
+package com.fridgerescuer.presentation.views.main.fragment
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
-import com.fridgerescuer.presentation.databinding.FragmentMainRecipeBinding
-import com.fridgerescuer.presentation.views.home.HomeViewModel
+import com.fridgerescuer.presentation.databinding.FragmentMainHomeBinding
+import com.fridgerescuer.presentation.views.main.home.HomeViewModel
 
 @AndroidEntryPoint
-class RecipeFragment: BaseFragment<FragmentMainRecipeBinding>(
-    R.layout.fragment_main_recipe
+class HomeFragment: BaseFragment<FragmentMainHomeBinding>(
+    R.layout.fragment_main_home
 ) {
     private val viewModel: HomeViewModel by viewModels()
 
@@ -25,4 +20,7 @@ class RecipeFragment: BaseFragment<FragmentMainRecipeBinding>(
 
         }
     }
+
+
 }
+
