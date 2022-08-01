@@ -6,7 +6,7 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.fridgerescuer.presentation.utils.BackPressUtil
+import com.fridgerescuer.presentation.R
 import io.reactivex.disposables.CompositeDisposable
 
 abstract class BaseActivity<B: ViewDataBinding>(
@@ -15,25 +15,23 @@ abstract class BaseActivity<B: ViewDataBinding>(
 
     lateinit var binding: B
     private val compositeDisposable = CompositeDisposable()
-    private var backPressHandler: BackPressUtil? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, layoutId)
-        binding.lifecycleOwner = this
-        backPressHandler = BackPressUtil(this)
+        binding = DataBindingUtil.setContentView(this@BaseActivity, layoutId)
+        binding.lifecycleOwner = this@BaseActivity
     }
 
-    protected fun showToast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
-    }
-
+    @Override
     override fun onDestroy() {
         super.onDestroy()
         compositeDisposable.clear()
     }
 
+    @Override
     override fun onBackPressed() {
-        backPressHandler!!.onBackPressed()
+        finish()
+        overridePendingTransition(0, R.anim.anim_rightout)
+        super.onBackPressed()
     }
 }

@@ -10,20 +10,16 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/location_layout"
+        android:id="@+id/myfridge_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".views.main.mypage.MypageActivity" >
+        tools:context=".views.myfridge.MyFridgeActivity">
 
         <TextView
-            android:id="@+id/text_drawer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:text="drawer"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="myfridge" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

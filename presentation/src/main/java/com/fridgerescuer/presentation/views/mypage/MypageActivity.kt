@@ -7,12 +7,12 @@ import com.fridgerescuer.presentation.databinding.ActivityMypageBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ActivityMypage: BaseActivity<ActivityMypageBinding>(
+class MypageActivity: BaseActivity<ActivityMypageBinding>(
     R.layout.activity_mypage
 ) {
+    @Override
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar!!.hide()
 
 
     }
