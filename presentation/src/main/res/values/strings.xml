@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">냉장고 구조대</string>
 
+    <string name="app_name">냉장고 구조대</string>
     <string name="action_location">내 위치</string>
     <string name="action_mypage">마이페이지</string>
-
     <string name="button_myfridge">냉장고</string>
     <string name="button_recipe">레시피</string>
+    <string name="main_search">재료, 레시피 검색</string>
 
     <string name="finish_app">앱 종료</string>
 </resources>

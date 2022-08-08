@@ -2,16 +2,16 @@ package com.fridgerescuer.presentation.views
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseActivity
 import com.fridgerescuer.presentation.databinding.ActivityMainBinding
 import com.fridgerescuer.presentation.views.location.LocationActivity
 import com.fridgerescuer.presentation.views.mypage.MypageActivity
-import com.fridgerescuer.presentation.views.myfridge.MyfridgeActivity
 import com.fridgerescuer.presentation.views.recipe.RecipeActivity
+import com.fridgerescuer.presentation.views.search.SearchActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,12 +23,19 @@ class MainActivity: BaseActivity<ActivityMainBinding>(
         super.onCreate(savedInstanceState)
 
         presetWidget()
+        presetMyIngr()
     }
 
-    private fun presetWidget(){
+    private fun presetWidget() {
         // action bar
         setSupportActionBar(binding.mainToolbar)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
+
+        // search bar
+        binding.mainSearchButton.setOnClickListener {
+            startActivity(Intent(this@MainActivity, SearchActivity::class.java))
+            overridePendingTransition(R.anim.anim_rightin, 0)
+        }
 
         // myfridge, recipe button
         binding.mainMyfridgeButton.setOnClickListener {
@@ -41,7 +48,18 @@ class MainActivity: BaseActivity<ActivityMainBinding>(
         }
     }
 
-    // actionbar click
+    private fun presetMyIngr(){
+        val ingrView0 = LayoutInflater.from(this).inflate(R.layout.view_ingr, binding.mainIngrContainer, true)
+        val ingrView1 = LayoutInflater.from(this).inflate(R.layout.view_ingr, binding.mainIngrContainer, true)
+        val ingrView2 = LayoutInflater.from(this).inflate(R.layout.view_ingr, binding.mainIngrContainer, true)
+        val ingrView3 = LayoutInflater.from(this).inflate(R.layout.view_ingr, binding.mainIngrContainer, true)
+        val ingrView4 = LayoutInflater.from(this).inflate(R.layout.view_ingr, binding.mainIngrContainer, true)
+        val ingrView5 = LayoutInflater.from(this).inflate(R.layout.view_ingr, binding.mainIngrContainer, true)
+
+
+    }
+
+    // actionbar click override
     @Override
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_main, menu)
