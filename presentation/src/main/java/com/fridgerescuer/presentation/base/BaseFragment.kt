@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
+import androidx.core.view.MenuHost
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -15,6 +16,7 @@ abstract class BaseFragment<B: ViewDataBinding>(
     private var _binding: B? = null
     protected val binding get() = _binding!!
 
+    @Override
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,12 +26,14 @@ abstract class BaseFragment<B: ViewDataBinding>(
         return binding.root
     }
 
+    @Override
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.lifecycleOwner = this.viewLifecycleOwner
         initView()
         super.onViewCreated(view, savedInstanceState)
     }
 
+    @Override
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

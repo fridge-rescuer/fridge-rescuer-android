@@ -10,167 +10,19 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".views.MainActivity"
-        android:background="@color/white">
+        tools:context="com.fridgerescuer.presentation.views.MainActivity">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/main_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/design_default_color_primary_variant"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:textColor="@color/design_default_color_on_primary"
-                android:textSize="20sp" />
-
-        </androidx.appcompat.widget.Toolbar>
-
-        <FrameLayout
-            android:id="@+id/main_search_layout"
-            android:onClick="onButtonClicked"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="12dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginLeft="0dp"
-            app:layout_constraintDimensionRatio="H,8:1"
-            app:layout_constraintTop_toBottomOf="@+id/main_toolbar"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:background="@drawable/shape_main_layout_search" >
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/main_search_button"
-                android:onClick="onButtonClicked"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="14dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginLeft="12dp"
-                android:paddingStart="6dp"
-                android:background="@color/design_default_color_on_primary"
-                android:text="@string/main_search"
-                android:gravity="center_vertical"
-                android:textColor="@color/pale"
-                android:drawableStart="@drawable/ic_action_search_24dp"/>
-
-        </FrameLayout>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/main_myfridge_button"
-            android:onClick="onButtonClicked"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="6dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="12dp"
-            app:layout_constraintDimensionRatio="H,1:1"
-            app:layout_constraintTop_toBottomOf="@+id/main_search_layout"
-            app:layout_constraintRight_toLeftOf="@+id/main_recipe_button"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:background="@drawable/shape_main_button_temp"
-            android:text="@string/button_myfridge" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/main_recipe_button"
-            android:onClick="onButtonClicked"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginStart="4dp"
-            app:layout_constraintDimensionRatio="H,1:1"
-            app:layout_constraintTop_toBottomOf="@+id/main_search_layout"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/main_myfridge_button"
-            android:background="@drawable/shape_main_button_temp"
-            android:text="@string/button_recipe" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/main_ingr_layout"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginLeft="12dp"
-            app:layout_constraintDimensionRatio="H,14:3"
-            app:layout_constraintTop_toBottomOf="@+id/main_myfridge_button"
-            android:background="@drawable/shape_main_layout_ingr">
-
-            <HorizontalScrollView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:fillViewport="true"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/main_add_layout">
-
-                <LinearLayout
-                    android:id="@+id/main_ingr_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                </LinearLayout>
-
-            </HorizontalScrollView>
-
-            <FrameLayout
-                android:id="@+id/main_add_layout"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
-                app:layout_constraintDimensionRatio="H,3:2"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:background="@drawable/shape_main_button_add" >
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_main_add_24dp"
-                    android:scaleType="centerInside" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/main_add_button"
-                    android:onClick="onButtonClicked"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/transparent" />
-
-            </FrameLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/main_buy_layout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginLeft="12dp"
-            app:layout_constraintDimensionRatio="H,2:1"
-            app:layout_constraintTop_toBottomOf="@+id/main_ingr_layout"
-            android:background="@drawable/shape_main_layout_ingr">
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
