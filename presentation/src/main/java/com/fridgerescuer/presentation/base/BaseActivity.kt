@@ -27,11 +27,4 @@ abstract class BaseActivity<B: ViewDataBinding>(
         super.onDestroy()
         compositeDisposable.clear()
     }
-
-    @Override
-    override fun onBackPressed() {
-        finish()
-        overridePendingTransition(0, R.anim.anim_rightout)
-        super.onBackPressed()
-    }
 }

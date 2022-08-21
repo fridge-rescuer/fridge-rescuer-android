@@ -3,10 +3,12 @@ package com.fridgerescuer.presentation.views.main
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.View
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.findNavController
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
 import com.fridgerescuer.presentation.databinding.FragmentMainBinding
@@ -24,6 +26,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
     @Override
     override fun initView() {
         initToolBar()
+        initButton()
 
         //initMyIngr()
     }
@@ -33,7 +36,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.action_mypage -> {
-                    // Navigate to settings screen
+                    requireView().findNavController().navigate(R.id.action_mainFragment_to_mypageFragment)
                     true
                 }
                 R.id.action_location -> {
@@ -44,6 +47,20 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
             }
         }
     }
+
+    private fun initButton() {
+        binding.searchButton.setOnClickListener {
+            view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_searchFragment)
+        }
+        binding.myfridgeButton.setOnClickListener {
+            view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_myfridgeFragment)
+        }
+        binding.recipeButton.setOnClickListener {
+            view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
+        }
+    }
+
+
 
 
 
