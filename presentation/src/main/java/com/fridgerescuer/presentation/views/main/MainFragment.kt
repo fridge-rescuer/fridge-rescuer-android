@@ -1,9 +1,12 @@
 package com.fridgerescuer.presentation.views.main
 
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.view.View.INVISIBLE
+import android.widget.ScrollView
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
@@ -27,20 +30,21 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
     override fun initView() {
         initToolBar()
         initButton()
-
-        //initMyIngr()
+        initMyIngr()
+        initDietInfo()
+        initStickyScroll()
     }
 
     private fun initToolBar() {
         binding.toolbar.inflateMenu(R.menu.toolbar_main)
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.action_mypage -> {
+                R.id.toolbar_mypage -> {
                     requireView().findNavController().navigate(R.id.action_mainFragment_to_mypageFragment)
                     true
                 }
-                R.id.action_location -> {
-                    // Save profile changes
+                R.id.toolbar_location -> {
+                    // click action
                     true
                 }
                 else -> false
@@ -50,39 +54,64 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
 
     private fun initButton() {
         binding.searchButton.setOnClickListener {
-            view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_searchFragment)
+                view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_searchFragment)
         }
         binding.myfridgeButton.setOnClickListener {
-            view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_myfridgeFragment)
+                view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_myfridgeFragment)
         }
         binding.recipeButton.setOnClickListener {
-            view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
+                view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
+        }
+        binding.dietButton.setOnClickListener {
+                view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
         }
     }
 
+    private fun initMyIngr() {
 
+    }
+
+    private fun initDietInfo() {
+
+    }
+
+    private fun initStickyScroll() {
+        binding.mainScrollView.run {
+            header = binding.scrollTabLayout
+            stickListener = { _ ->
+                binding.toolbar.menu.clear()
+                binding.toolbar.inflateMenu(R.menu.toolbar_scroll)
+                binding.toolbar.setOnMenuItemClickListener {
+                    when (it.itemId) {
+                        R.id.toolbar_top -> {
+                            this.fullScroll(ScrollView.FOCUS_UP)
+                            true
+                        }
+                        R.id.toolbar_setting -> {
+                            // tab set dialog
+                            true
+                        }
+                        else -> false
+                    }
+                }
+            }
+            freeListener = { _ ->
+                binding.toolbar.menu.clear()
+                initToolBar()
+            }
+        }
+        initTab()
+    }
+    private fun initTab() {
+
+    }
+    private fun initRecipeList() {
+
+    }
 
 
 
     /*
-    private fun initButton() {
-        // search bar
-        binding.searchButton.setOnClickListener {
-            startActivity(Intent(this@MainFragment, SearchActivity::class.java))
-            overridePendingTransition(R.anim.anim_rightin, 0)
-        }
-
-        // myfridge, recipe button
-        binding.myfridgeButton.setOnClickListener {
-            startActivity(Intent(this@MainFragment, MyfridgeActivity::class.java))
-            overridePendingTransition(R.anim.anim_rightin, 0)
-        }
-        binding.mainRecipeButton.setOnClickListener {
-            startActivity(Intent(this@MainActivity, RecipeActivity::class.java))
-            overridePendingTransition(R.anim.anim_rightin, 0)
-        }
-    }
-
     private fun initMyIngr(){
         val ingrView0 = LayoutInflater.from(this).inflate(R.layout.view_ingr, binding.ingrContainer, true)
         val ingrView1 = LayoutInflater.from(this).inflate(R.layout.view_ingr, binding.ingrContainer, true)
@@ -90,8 +119,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
         val ingrView3 = LayoutInflater.from(this).inflate(R.layout.view_ingr, binding.ingrContainer, true)
         val ingrView4 = LayoutInflater.from(this).inflate(R.layout.view_ingr, binding.ingrContainer, true)
         val ingrView5 = LayoutInflater.from(this).inflate(R.layout.view_ingr, binding.ingrContainer, true)
-
-
     }
     */
 }
