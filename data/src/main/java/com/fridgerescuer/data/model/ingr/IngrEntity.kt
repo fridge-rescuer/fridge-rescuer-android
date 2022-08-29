@@ -1,4 +1,4 @@
-package com.fridgerescuer.data.model.myfridge
+package com.fridgerescuer.data.model.ingr
 
 import android.graphics.Bitmap
 import androidx.room.Entity
@@ -8,15 +8,15 @@ import androidx.room.PrimaryKey
 data class IngrEntity(
     @PrimaryKey val id:Int,
     // required - 식재료 id, 이름, 유통 기한, 보관 장소
-    val ingr_id:Short,
+    val ingr_id: Short,
     val ingr_name: String,
-    val exp_date: String = "yyyymmdd",
+    val exp_date: String,
     val storage: Int,
 
     // optional - 식재료 사진, 이용 기한, 구매일, 양, 단위, 칼로리, 선호
-    val ingr_image: Bitmap? = null,
-    val buy_date: String = "yyyymmdd",
-    val use_date: Int? = null,
+    val ingr_image: Bitmap,
+    val buy_date: String? = null,
+    val use_date: String? = null,
     val qty: Int? = null,
     val cnt_unit: String? = null,
     val kcal: Int? = null,

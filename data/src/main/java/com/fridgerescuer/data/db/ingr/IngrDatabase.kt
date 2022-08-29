@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.fridgerescuer.data.model.myfridge.IngrEntity
+import com.fridgerescuer.data.model.ingr.IngrEntity
 
 @Database(entities = [IngrEntity::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)

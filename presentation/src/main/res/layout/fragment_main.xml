@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View" />
 
         <variable
             name="vm"
@@ -82,7 +83,7 @@
                                 android:layout_marginLeft="12dp"
                                 android:paddingStart="6dp"
                                 android:paddingEnd="6dp"
-                                android:background="@color/design_default_color_on_primary"
+                                android:background="@drawable/ripple_main_button_temp"
                                 android:text="@string/main_search"
                                 android:gravity="center_vertical"
                                 android:textColor="@color/pale"
@@ -154,23 +155,39 @@
                             app:layout_constraintTop_toBottomOf="@+id/myfridge_button"
                             android:background="@drawable/shape_main_layout_ingr">
 
-                            <HorizontalScrollView
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/ingr_recycler_view"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:fillViewport="true"
                                 android:orientation="horizontal"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/add_layout">
+                                app:layout_constraintEnd_toStartOf="@id/add_layout"
+                                bind:setItems="@{vm.ingrSampleList}" />
+
+                            <com.facebook.shimmer.ShimmerFrameLayout
+                                android:id="@+id/ingr_shimmer"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/add_layout"
+                                android:visibility="@{vm.ingrSampleLoading ? View.VISIBLE : View.GONE}">
 
                                 <LinearLayout
-                                    android:id="@+id/ingr_scroll_view"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:orientation="horizontal">
 
+                                    <include layout="@layout/item_ingr_sample_shimmer" />
+
+                                    <include layout="@layout/item_ingr_sample_shimmer" />
+
+                                    <include layout="@layout/item_ingr_sample_shimmer" />
+
+                                    <include layout="@layout/item_ingr_sample_shimmer" />
+
                                 </LinearLayout>
 
-                            </HorizontalScrollView>
+                            </com.facebook.shimmer.ShimmerFrameLayout>
 
                             <FrameLayout
                                 android:id="@+id/add_layout"
@@ -180,8 +197,7 @@
                                 app:layout_constraintDimensionRatio="H,3:2"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintRight_toRightOf="parent"
-                                android:background="@drawable/shape_main_button_add" >
+                                app:layout_constraintRight_toRightOf="parent" >
 
                                 <ImageView
                                     android:layout_width="match_parent"
@@ -195,7 +211,7 @@
                                     android:onClick="onButtonClicked"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:background="?attr/selectableItemBackground" />
+                                    android:background="@drawable/ripple_main_button_trans" />
 
                             </FrameLayout>
 

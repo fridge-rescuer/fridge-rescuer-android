@@ -22,6 +22,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
     R.layout.fragment_main
 ) {
     private val viewModel: MainViewModel by viewModels()
+    private lateinit var ingrSampleAdapter: IngrSampleAdapter
+    private lateinit var recipeAdapter: RecipeAdapter
 
 
     //onViewCreated() override 에서 livedata observing, view 초기값, adapter(recyclerview, viewpager2) 설정

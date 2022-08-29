@@ -1,14 +1,16 @@
-package com.fridgerescuer.domain.model
+package com.fridgerescuer.domain.model.ingr
 
 import android.graphics.Bitmap
 
 data class Ingr(
+    val id: Int,
+    val ingr_id: Short,
     val ingr_name: String,
     val exp_date: String,
     val storage: Int,
-    val ingr_image: Bitmap?,
-    val buy_date: String,
-    val use_date: Int?,
+    val ingr_image: Bitmap,
+    val buy_date: String?,
+    val use_date: String?,
     val qty: Int?,
     val cnt_unit: String?,
     val kcal: Int?,
