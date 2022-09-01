@@ -1,19 +1,13 @@
 package com.fridgerescuer.presentation.views.recipe
 
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
-import com.fridgerescuer.presentation.databinding.FragmentMainBinding
+import com.fridgerescuer.presentation.databinding.FragmentRecipeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RecipeFragment : BaseFragment<FragmentMainBinding>(
+class RecipeFragment : BaseFragment<FragmentRecipeBinding>(
     R.layout.fragment_recipe
 ) {
     private val viewModel: RecipeViewModel by viewModels()

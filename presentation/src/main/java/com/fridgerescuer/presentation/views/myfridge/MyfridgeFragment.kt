@@ -1,12 +1,6 @@
 package com.fridgerescuer.presentation.views.myfridge
 
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
 import com.fridgerescuer.presentation.databinding.FragmentMainBinding

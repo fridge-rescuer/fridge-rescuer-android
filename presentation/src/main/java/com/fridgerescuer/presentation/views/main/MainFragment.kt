@@ -11,7 +11,10 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.fridgerescuer.domain.model.ingr.Ingr
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
 import com.fridgerescuer.presentation.databinding.FragmentMainBinding
@@ -56,21 +59,25 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
 
     private fun initButton() {
         binding.searchButton.setOnClickListener {
-                view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_searchFragment)
+                findNavController().navigate(R.id.action_mainFragment_to_searchFragment)
         }
         binding.myfridgeButton.setOnClickListener {
-                view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_myfridgeFragment)
+                findNavController().navigate(R.id.action_mainFragment_to_myfridgeFragment)
         }
         binding.recipeButton.setOnClickListener {
-                view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
+                findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
         }
         binding.dietButton.setOnClickListener {
-                view: View -> view.findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
+                findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
         }
     }
 
     private fun initMyIngr() {
+        viewModel.requestCloseIngrSample()
 
+        ingrSampleAdapter = IngrSampleAdapter { ingrSample ->
+            findNavController().navigate(R.id.action_mainFragment_to_mypageFragment)
+        }
     }
 
     private fun initDietInfo() {

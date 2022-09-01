@@ -8,7 +8,9 @@ import com.fridgerescuer.domain.usecase.ingr.GetSomeIngrSampleUseCase
 import com.fridgerescuer.domain.usecase.recipe.GetRecipeUseCase
 import com.fridgerescuer.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Flowable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
 @HiltViewModel
@@ -17,10 +19,12 @@ class MainViewModel @Inject constructor(
     private val getRecipeUseCase: GetRecipeUseCase
 ): BaseViewModel() {
 
+
     private val _ingrSampleList = MutableLiveData<MutableList<IngrSample>>()
     val ingrSampleList: LiveData<MutableList<IngrSample>> get() = _ingrSampleList
 
     private val _ingrSampleLoading = MutableLiveData<Boolean>(false)
+
     val ingrSampleLoading: LiveData<Boolean> get() = _ingrSampleLoading
 
     private val _recipeList = MutableLiveData<MutableList<Recipe>>()
@@ -33,7 +37,7 @@ class MainViewModel @Inject constructor(
         compositeDisposable.add(
             getSomeIngrSampleUseCase()
                 .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe { _ingrSampleLoading.value = true }
                 .doAfterTerminate { _ingrSampleLoading.value = false }
                 .subscribe { ingrSample ->
@@ -46,7 +50,7 @@ class MainViewModel @Inject constructor(
         compositeDisposable.add(
             getRecipeUseCase()
                 .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe { _recipeLoading.value = true }
                 .doAfterTerminate { _recipeLoading.value = false }
                 .subscribe { recipes ->

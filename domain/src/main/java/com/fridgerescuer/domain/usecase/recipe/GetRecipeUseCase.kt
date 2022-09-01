@@ -2,7 +2,7 @@ package com.fridgerescuer.domain.usecase.recipe
 
 import com.fridgerescuer.domain.model.recipe.Recipe
 import com.fridgerescuer.domain.repository.RecipeRepository
-import io.reactivex.Flowable
+import io.reactivex.rxjava3.core.Flowable
 import javax.inject.Inject
 
 class GetRecipeUseCase @Inject constructor(private val repository: RecipeRepository) {

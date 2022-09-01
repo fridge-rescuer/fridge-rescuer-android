@@ -1,13 +1,11 @@
 package com.fridgerescuer.presentation.base
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.fridgerescuer.presentation.R
-import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 abstract class BaseActivity<B: ViewDataBinding>(
     @LayoutRes val layoutId: Int

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.fridgerescuer.domain.model.ingr.IngrSample
 import com.fridgerescuer.presentation.views.main.IngrSampleAdapter
 
-@BindingAdapter("setItems")
+@BindingAdapter("setIngrSamples")
 fun RecyclerView.setAdapterItems(items: MutableList<IngrSample>?) {
     items?.let {
         (adapter as IngrSampleAdapter).submitList(it.toMutableList())

@@ -1,13 +1,14 @@
-package com.fridgerescuer.data.db.ingr
+package com.fridgerescuer.data.db.myingr
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.fridgerescuer.data.model.ingr.IngrEntity
+import io.reactivex.rxjava3.core.Single
 
 @Dao
-interface IngrDao {
+interface MyIngrDao {
     // 삽입 - 여러개
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertIngrs(vararg fridge:IngrEntity)
@@ -24,7 +25,7 @@ interface IngrDao {
 
     // 탐색 - 전체
     @Query("SELECT * FROM ingrs")
-    fun getAll():List<IngrEntity>
+    fun getAll(): Single<List<IngrEntity>>
     // 한줄
     @Query("SELECT * FROM ingrs where id = :id")
     fun getIngr(id:Int):IngrEntity

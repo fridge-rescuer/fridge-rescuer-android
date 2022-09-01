@@ -1,19 +1,13 @@
 package com.fridgerescuer.presentation.views.mypage
 
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
-import com.fridgerescuer.presentation.databinding.FragmentMainBinding
+import com.fridgerescuer.presentation.databinding.FragmentMypageBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MypageFragment : BaseFragment<FragmentMainBinding>(
+class MypageFragment : BaseFragment<FragmentMypageBinding>(
     R.layout.fragment_mypage
 ) {
     private val viewModel: MypageViewModel by viewModels()

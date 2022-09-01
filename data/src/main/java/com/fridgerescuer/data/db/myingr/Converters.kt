@@ -1,4 +1,4 @@
-package com.fridgerescuer.data.db.ingr
+package com.fridgerescuer.data.db.myingr
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

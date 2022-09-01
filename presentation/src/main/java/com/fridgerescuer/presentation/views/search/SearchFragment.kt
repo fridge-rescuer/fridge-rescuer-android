@@ -1,19 +1,13 @@
 package com.fridgerescuer.presentation.views.search
 
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
-import com.fridgerescuer.presentation.databinding.FragmentMainBinding
+import com.fridgerescuer.presentation.databinding.FragmentSearchBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SearchFragment : BaseFragment<FragmentMainBinding>(
+class SearchFragment : BaseFragment<FragmentSearchBinding>(
     R.layout.fragment_search
 ) {
     private val viewModel: SearchViewModel by viewModels()

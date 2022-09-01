@@ -1,10 +1,9 @@
 package com.fridgerescuer.domain.repository
 
 import com.fridgerescuer.domain.model.ingr.Ingr
-import io.reactivex.Flowable
+import io.reactivex.rxjava3.core.Flowable
 
 interface IngrRepository {
-    fun getCloseIngr(): Flowable<List<Ingr>>
-
-    fun getAllIngrSample()
+    fun getIngr(): Flowable<Ingr>
+    fun getAllIngrs(): Flowable<List<Ingr>>
 }

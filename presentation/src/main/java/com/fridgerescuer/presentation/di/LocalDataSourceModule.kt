@@ -1,24 +1,21 @@
 package com.fridgerescuer.presentation.di
 
+import com.fridgerescuer.data.db.myingr.MyIngrDao
 import com.fridgerescuer.data.repository.ingr.local.IngrLocalDataSource
-import com.fridgerescuer.data.repository.ingr.local.IngrLocalDataSourcelmpl
-import com.fridgerescuer.data.repository.recipe.remote.RecipeRemoteDataSource
-import com.fridgerescuer.data.repository.recipe.remote.RecipeRemoteDataSourceImpl
-import dagger.Binds
+import com.fridgerescuer.data.repository.ingr.local.IngrLocalDataSourceImpl
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class LocalDataSourceModule {
+object LocalDataSourceModule {
 
-    @Binds
     @Singleton
-    abstract fun bindIngrLocalDataSourcelmpl(impl: IngrLocalDataSourcelmpl): IngrLocalDataSource
-
-    @Binds
-    @Singleton
-    abstract fun bindRecipeRemoteDataSourceImpl(impl: RecipeRemoteDataSourceImpl): RecipeRemoteDataSource
+    @Provides
+    fun provideIngrLocalDataSourceImpl(myIngrDao: MyIngrDao): IngrLocalDataSource {
+        return IngrLocalDataSourceImpl(myIngrDao)
+    }
 }
