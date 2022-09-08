@@ -13,12 +13,10 @@ data class IngrEntity(
     val exp_date: String,
     val storage: Int,
 
-    // optional - 식재료 사진, 이용 기한, 구매일, 양, 단위, 칼로리, 선호
+    // optional - 식재료 사진, 이용 기한, 구매일, 칼로리, 선호
     val ingr_image: Bitmap,
     val buy_date: String? = null,
     val use_date: String? = null,
-    val qty: Int? = null,
-    val cnt_unit: String? = null,
     val kcal: Int? = null,
     val ingr_like: Boolean = false,
 
@@ -36,8 +34,6 @@ data class IngrEntity(
                 "storage = $storage, " +
                 "ingr_image = $ingr_image, " +
                 "use_date = $use_date, " +
-                "qty = $qty, " +
-                "cnt_unit = $cnt_unit, " +
                 "kcal = $kcal, " +
                 "ingr_like = $ingr_like, " +
                 "store_image = $store_image, " +

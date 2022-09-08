@@ -11,8 +11,6 @@ data class Ingr(
     val ingr_image: Bitmap,
     val buy_date: String?,
     val use_date: String?,
-    val qty: Int?,
-    val cnt_unit: String?,
     val kcal: Int?,
     val ingr_like: Boolean,
     val store_image: Bitmap?,
