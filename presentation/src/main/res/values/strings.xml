@@ -4,8 +4,9 @@
 
     <string name="toolbar_location">내 위치</string>
     <string name="toolbar_mypage">마이페이지</string>
-    <string name="toolbar_setting">탭 설정</string>
+    <string name="toolbar_add_ingr">먹거리 추가</string>
     <string name="toolbar_top">상단</string>
+    <string name="toolbar_back">뒤로 가기</string>
 
     <string name="button_myfridge">냉장고</string>
     <string name="button_recipe">레시피</string>

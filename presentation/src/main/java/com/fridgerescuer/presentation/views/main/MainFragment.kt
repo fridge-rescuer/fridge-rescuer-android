@@ -1,20 +1,9 @@
 package com.fridgerescuer.presentation.views.main
 
-import android.util.Log
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.View.INVISIBLE
 import android.widget.ScrollView
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.fridgerescuer.domain.model.ingr.Ingr
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
 import com.fridgerescuer.presentation.databinding.FragmentMainBinding
@@ -34,8 +23,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
     @Override
     override fun initView() {
         initToolBar()
-        initButton()
-        initMyIngr()
+        initButtons()
+        initMyIngrs()
         initDietInfo()
         initStickyScroll()
     }
@@ -48,35 +37,35 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
                     requireView().findNavController().navigate(R.id.action_mainFragment_to_mypageFragment)
                     true
                 }
-                R.id.toolbar_location -> {
-                    // click action
-                    true
-                }
                 else -> false
             }
         }
     }
 
-    private fun initButton() {
+    private fun initButtons() {
         binding.searchButton.setOnClickListener {
-                findNavController().navigate(R.id.action_mainFragment_to_searchFragment)
+            findNavController().navigate(R.id.action_mainFragment_to_searchFragment)
         }
         binding.myfridgeButton.setOnClickListener {
-                findNavController().navigate(R.id.action_mainFragment_to_myfridgeFragment)
+            findNavController().navigate(R.id.action_mainFragment_to_myfridgeFragment)
         }
         binding.recipeButton.setOnClickListener {
-                findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
+            findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
         }
         binding.dietButton.setOnClickListener {
-                findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
+            findNavController().navigate(R.id.action_mainFragment_to_recipeFragment)
+        }
+        binding.addButton.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_addIngrFragment)
         }
     }
 
-    private fun initMyIngr() {
+    private fun initMyIngrs() {
         viewModel.requestCloseIngrSample()
 
         ingrSampleAdapter = IngrSampleAdapter { ingrSample ->
-            findNavController().navigate(R.id.action_mainFragment_to_mypageFragment)
+            if (ingrSample.id != null)
+                findNavController().navigate(MainFragmentDirections.actionMainFragmentToMyIngrFragment(ingrSample.id))
         }
     }
 
@@ -94,10 +83,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
                     when (it.itemId) {
                         R.id.toolbar_top -> {
                             this.fullScroll(ScrollView.FOCUS_UP)
-                            true
-                        }
-                        R.id.toolbar_setting -> {
-                            // tab set dialog
                             true
                         }
                         else -> false

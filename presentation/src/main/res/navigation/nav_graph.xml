@@ -37,6 +37,20 @@
             app:exitAnim="@anim/anim_fadeout"
             app:popEnterAnim="@anim/anim_fadein"
             app:popExitAnim="@anim/anim_rightout" />
+        <action
+            android:id="@+id/action_mainFragment_to_addIngrFragment"
+            app:destination="@id/addIngrFragment"
+            app:enterAnim="@anim/anim_rightin"
+            app:exitAnim="@anim/anim_fadeout"
+            app:popEnterAnim="@anim/anim_fadein"
+            app:popExitAnim="@anim/anim_rightout" />
+        <action
+            android:id="@+id/action_mainFragment_to_myIngrFragment"
+            app:destination="@id/myIngrFragment"
+            app:enterAnim="@anim/anim_rightin"
+            app:exitAnim="@anim/anim_fadeout"
+            app:popEnterAnim="@anim/anim_fadein"
+            app:popExitAnim="@anim/anim_rightout" />
     </fragment>
 
     <fragment
@@ -48,13 +62,30 @@
         android:id="@+id/mypageFragment"
         android:name="com.fridgerescuer.presentation.views.mypage.MypageFragment"
         android:label="MypageFragment" />
+
     <fragment
         android:id="@+id/recipeFragment"
         android:name="com.fridgerescuer.presentation.views.recipe.RecipeFragment"
         android:label="RecipeFragment" />
+
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.fridgerescuer.presentation.views.search.SearchFragment"
         android:label="SearchFragment" />
+
+    <fragment
+        android:id="@+id/addIngrFragment"
+        android:name="com.fridgerescuer.presentation.views.myfridge.addingr.AddIngrFragment"
+        android:label="AddIngrFragment" />
+
+    <fragment
+        android:id="@+id/myIngrFragment"
+        android:name="com.fridgerescuer.presentation.views.myfridge.myingr.MyIngrFragment"
+        android:label="MyIngrFragment" >
+        <argument
+            android:name="ingrID"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 
 </navigation>

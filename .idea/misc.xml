@@ -60,25 +60,34 @@
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/data/src/main/res/drawable/temp_image_24.xml" value="0.1435" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_action_location_24dp.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_baseline_keyboard_arrow_up_24.xml" value="0.3455" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.2385" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_ingr_add_camera_16dp.xml" value="0.2385" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_ingr_add_camera_24dp.xml" value="0.2385" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_main_add_24dp.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_main_search_24dp.xml" value="0.3455" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_toolbar_location_24dp.xml" value="0.173" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_toolbar_mypage_24dp.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_toolbar_setting_24dp.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_toolbar_time_24dp.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_toolbar_top_24dp.xml" value="0.3455" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ripple_ingr_add_button_image.xml" value="0.2385" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ripple_main_button_add.xml" value="0.145" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ripple_main_button_temp.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ripple_main_button_trans.xml" value="0.145" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_image_rounding.xml" value="0.277" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_ingr_add_button_image.xml" value="0.2385" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_main_button_add.xml" value="0.3535" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_main_button_ingr.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_main_button_temp.xml" value="0.3455" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_main_button_trans.xml" value="0.2385" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_main_layout_ingr.xml" value="0.25" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_main_layout_search.xml" value="0.2385" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/activity_main.xml" value="0.4510474561778538" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/activity_mypage.xml" value="0.4455852156057495" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/activity_recipe.xml" value="0.4510474561778538" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/fragment_add_ingr.xml" value="0.33" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/fragment_diet.xml" value="0.35271483539974346" />
-        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/fragment_main.xml" value="0.1" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/fragment_main.xml" value="0.33" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/fragment_my_ingr.xml" value="0.3540344514959202" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/fragment_myfridge.xml" value="0.2783240701154339" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/fragment_mypage.xml" value="0.2783240701154339" />
@@ -89,6 +98,8 @@
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/item_ingr_sample_shimmer.xml" value="0.30886075949367087" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/layout/view_ingr.xml" value="0.34031637451902524" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/menu/appbar_main.xml" value="0.4510474561778538" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/menu/toolbar_add_ingr.xml" value="0.3467293715262933" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/menu/toolbar_default.xml" value="0.34587430525865753" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/menu/toolbar_main.xml" value="0.3317657118426678" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/menu/toolbar_scroll.xml" value="0.3450192389910218" />
       </map>

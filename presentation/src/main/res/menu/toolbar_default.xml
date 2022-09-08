@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/toolbar_top"
-        android:title="@string/toolbar_top"
-        android:icon="@drawable/ic_toolbar_top_24dp"
+        android:id="@+id/toolbar_back"
+        android:title="@string/toolbar_back"
+        android:icon="@drawable/ic_toolbar_arrow_back_24dp"
         app:showAsAction="ifRoom" />
 
 </menu>
