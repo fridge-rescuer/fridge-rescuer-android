@@ -18,7 +18,6 @@ data class IngrEntity(
     val buy_date: String? = null,
     val use_date: String? = null,
     val kcal: Int? = null,
-    val ingr_like: Boolean = false,
 
     // storage - 보관 사진, 보관 방법
     val store_image: Bitmap? = null,
@@ -35,7 +34,6 @@ data class IngrEntity(
                 "ingr_image = $ingr_image, " +
                 "use_date = $use_date, " +
                 "kcal = $kcal, " +
-                "ingr_like = $ingr_like, " +
                 "store_image = $store_image, " +
                 "store_str = $store_str"
     }

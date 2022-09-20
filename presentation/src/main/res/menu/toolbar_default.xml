@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/toolbar_back"
-        android:title="@string/toolbar_back"
+        android:title="@string/default_toolbar_back"
         android:icon="@drawable/ic_toolbar_arrow_back_24dp"
         app:showAsAction="ifRoom" />
 

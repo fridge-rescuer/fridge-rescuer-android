@@ -15,7 +15,6 @@ fun mapperToIngr(ingrs: List<IngrEntity>): List<Ingr> {
             it.buy_date,
             it.use_date,
             it.kcal,
-            it.ingr_like,
             it.store_image,
             it.store_str
         )
@@ -34,7 +33,6 @@ fun mapperToIngrEntity(ingrs: List<Ingr>): List<IngrEntity> {
             it.buy_date,
             it.use_date,
             it.kcal,
-            it.ingr_like,
             it.store_image,
             it.store_str
         )

@@ -22,6 +22,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
 
     @Override
     override fun initView() {
+        binding.vm = viewModel
+
         initToolBar()
         initButtons()
         initMyIngrs()
@@ -67,6 +69,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
             if (ingrSample.id != null)
                 findNavController().navigate(MainFragmentDirections.actionMainFragmentToMyIngrFragment(ingrSample.id))
         }
+        binding.ingrRecyclerView.adapter = ingrSampleAdapter
     }
 
     private fun initDietInfo() {

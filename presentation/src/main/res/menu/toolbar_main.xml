@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/toolbar_mypage"
-        android:title="@string/toolbar_mypage"
+        android:title="@string/main_toolbar_mypage"
         android:icon="@drawable/ic_toolbar_mypage_24dp"
         app:showAsAction="ifRoom" />
 

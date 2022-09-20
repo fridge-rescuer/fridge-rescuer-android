@@ -6,7 +6,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View" />
 
+        <variable
+            name="vm"
+            type="com.fridgerescuer.presentation.views.myfridge.addingr.AddIngrViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,117 +31,265 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/toolbar_add_ingr"
+                android:text="@string/add_ingr_toolbar_add_ingr"
                 android:textColor="@color/design_default_color_on_primary"
                 android:textSize="20sp" />
 
         </androidx.appcompat.widget.Toolbar>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/toolbar" >
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                app:layout_constraintBottom_toTopOf="@id/button_layout">
 
-                <ImageView
-                    android:id="@+id/ingr_image"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:background="@color/background"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintDimensionRatio="H,5:3"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <LinearLayout
-                    android:id="@+id/temp_layout"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="@id/ingr_image"
-                    app:layout_constraintEnd_toStartOf="@id/add_photo_layout"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintHorizontal_weight="7"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <FrameLayout
-                    android:id="@+id/add_photo_layout"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/shape_ingr_add_button_image"
-                    app:layout_constraintBottom_toBottomOf="@id/ingr_image"
-                    app:layout_constraintDimensionRatio="H,1:1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintHorizontal_weight="1"
-                    app:layout_constraintStart_toEndOf="@id/temp_layout">
+                    android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/ingr_image"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="6dp"
-                        android:background="@drawable/ic_ingr_add_camera_24dp" />
+                        android:layout_height="0dp"
+                        android:background="@color/background"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintDimensionRatio="H,7:5"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/add_photo_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/ripple_ingr_add_button_image"
-                        android:onClick="onButtonClicked" />
+                    <LinearLayout
+                        android:id="@+id/temp_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="@id/ingr_image"
+                        app:layout_constraintEnd_toStartOf="@id/add_photo_layout"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_weight="7"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-                </FrameLayout>
+                    <FrameLayout
+                        android:id="@+id/add_photo_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/shape_ingr_add_button_image"
+                        app:layout_constraintBottom_toBottomOf="@id/ingr_image"
+                        app:layout_constraintDimensionRatio="H,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/temp_layout">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ingr_image"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/name_edit_layout"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="먹거리 이름"
-                        app:errorEnabled="true" >
-
-                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-                            android:id="@+id/name_edit_view"
-                            style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                        <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:completionThreshold="1"
-                            android:textSize="16sp" />
+                            android:layout_height="match_parent"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/ic_ingr_add_camera_24dp" />
 
-                    </com.google.android.material.textfield.TextInputLayout>
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/add_photo_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ripple_ingr_add_button_image"
+                            android:onClick="onButtonClicked" />
+
+                    </FrameLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal" >
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ingr_image"
+                        android:orientation="vertical"
+                        android:padding="12dp">
 
-                        <com.google.android.material.button.MaterialButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/name_edit_layout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="6dp"
+                            app:boxStrokeColor="@drawable/selector_add_ingr_name"
+                            android:hint="@string/add_ingr_name">
 
-                        <com.google.android.material.button.MaterialButton
+                            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                                android:id="@+id/name_edit_view"
+                                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:completionThreshold="1"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="6dp" >
+
+                            <TextView
+                                android:id="@+id/exp_date_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="3dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toTopOf="@id/exp_date_button"
+                                app:layout_constraintStart_toStartOf="@id/exp_date_button"
+                                android:text="@string/add_ingr_exp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/exp_date_button"
+                                android:onClick="onButtonClicked"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="6dp"
+                                android:layout_marginBottom="6dp"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                app:layout_constraintTop_toBottomOf="@id/exp_date_text"
+                                app:layout_constraintBottom_toTopOf="@id/use_date_text"
+                                app:layout_constraintEnd_toStartOf="@id/storage_spinner"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:strokeColor="@color/red"
+                                android:drawableRight="@drawable/ic_ingr_add_calendar_24dp"
+                                android:textAppearance="?attr/textAppearanceSubtitle1"
+                                android:textColor="@color/m3_textfield_input_text_color"
+                                android:text="@{vm.expDate}" />
+
+                            <TextView
+                                android:id="@+id/storage_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="3dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toTopOf="@id/storage_spinner"
+                                app:layout_constraintStart_toStartOf="@id/storage_spinner"
+                                android:text="@string/add_ingr_storage"/>
+
+                            <Spinner
+                                android:id="@+id/storage_spinner"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginBottom="6dp"
+                                android:paddingHorizontal="@dimen/mtrl_btn_padding_left"
+                                android:paddingVertical="@dimen/mtrl_btn_padding_top"
+                                app:layout_constraintBottom_toTopOf="@id/buy_date_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/exp_date_button"
+                                app:layout_constraintTop_toBottomOf="@id/storage_text"
+                                android:background="@drawable/shape_ingr_add_button_spinner"
+                                android:textAppearance="?attr/textAppearanceSubtitle1"
+                                android:textColor="@color/m3_textfield_input_text_color" />
+
+                            <TextView
+                                android:id="@+id/use_date_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginBottom="3dp"
+                                app:layout_constraintTop_toBottomOf="@id/exp_date_button"
+                                app:layout_constraintBottom_toTopOf="@id/use_date_button"
+                                app:layout_constraintStart_toStartOf="@id/use_date_button"
+                                android:text="@string/add_ingr_use"/>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/use_date_button"
+                                android:onClick="onButtonClicked"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="6dp"
+                                android:layout_marginEnd="6dp"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                app:layout_constraintTop_toBottomOf="@id/use_date_text"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/buy_date_button"
+                                app:strokeColor="@color/mtrl_outlined_stroke_color"
+                                android:drawableRight="@drawable/ic_ingr_add_calendar_24dp"
+                                android:textAppearance="?attr/textAppearanceSubtitle1"
+                                android:textColor="@color/m3_textfield_input_text_color"
+                                android:text="@{vm.useDate}"/>
+
+                            <TextView
+                                android:id="@+id/buy_date_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginBottom="3dp"
+                                app:layout_constraintTop_toBottomOf="@id/storage_spinner"
+                                app:layout_constraintBottom_toTopOf="@id/buy_date_button"
+                                app:layout_constraintStart_toStartOf="@id/buy_date_button"
+                                android:text="@string/add_ingr_buy"/>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buy_date_button"
+                                android:onClick="onButtonClicked"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                app:layout_constraintTop_toBottomOf="@id/buy_date_text"
+                                app:layout_constraintBottom_toBottomOf="@id/use_date_button"
+                                app:layout_constraintStart_toEndOf="@id/use_date_button"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:strokeColor="@color/mtrl_outlined_stroke_color"
+                                android:drawableRight="@drawable/ic_ingr_add_calendar_24dp"
+                                android:textAppearance="?attr/textAppearanceSubtitle1"
+                                android:textColor="@color/m3_textfield_input_text_color"
+                                android:text="@{vm.buyDate}"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/alert_text"
+                            android:visibility="@{vm.isAlert() ? View.VISIBLE : View.GONE}"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/red"
+                            android:text="@{vm.alertText}"/>
 
                     </LinearLayout>
 
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </LinearLayout>
+            </ScrollView>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:id="@+id/button_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:layout_marginHorizontal="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
 
-        </ScrollView>
+                <Button
+                    android:id="@+id/undo_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:backgroundTint="@color/pale"
+                    android:text="@string/add_ingr_undo"/>
+
+                <Button
+                    android:id="@+id/save_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:backgroundTint="@color/green"
+                    android:text="@string/add_ingr_save"/>
+
+            </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

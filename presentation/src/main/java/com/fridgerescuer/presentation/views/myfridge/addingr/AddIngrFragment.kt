@@ -1,5 +1,8 @@
 package com.fridgerescuer.presentation.views.myfridge.addingr
 
+import android.util.Log
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.fragment.app.viewModels
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
@@ -13,6 +16,8 @@ class AddIngrFragment: BaseFragment<FragmentAddIngrBinding>(
     @Override
     override fun initView() {
         initToolBar()
+        initSpinner()
+        initButton()
     }
 
     private fun initToolBar() {
@@ -24,6 +29,35 @@ class AddIngrFragment: BaseFragment<FragmentAddIngrBinding>(
                     true
                 }
                 else -> false
+            }
+        }
+    }
+
+    private fun initSpinner() {
+        val spinner: Spinner = binding.storageSpinner
+
+        spinner.layoutParams.height = binding.expDateButton.height
+        spinner.dropDownVerticalOffset = 3
+
+        ArrayAdapter.createFromResource(
+            requireActivity(),
+            R.array.storage,
+            android.R.layout.simple_spinner_item
+        ).also{ adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinner.adapter = adapter
+        }
+    }
+
+    private fun initButton() {
+        binding.undoButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
+        binding.saveButton.setOnClickListener {
+            when (viewModel.addIngr()){
+                true -> requireActivity().onBackPressed()
+                else -> null
             }
         }
     }

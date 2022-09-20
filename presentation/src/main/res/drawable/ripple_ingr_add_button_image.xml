@@ -6,7 +6,7 @@
 
         <shape android:shape="oval">
 
-            <solid android:color="@color/black" />
+            <solid android:color="@color/mtrl_btn_text_btn_ripple_color" />
 
             <corners android:radius="10dip" />
 

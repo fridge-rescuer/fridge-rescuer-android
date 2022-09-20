@@ -61,8 +61,10 @@
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_action_location_24dp.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_baseline_keyboard_arrow_up_24.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.2385" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_ingr_add_calendar_24dp.xml" value="0.1" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_ingr_add_camera_16dp.xml" value="0.2385" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_ingr_add_camera_24dp.xml" value="0.2385" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_ingr_add_dropdown_arrow_24dp.xml" value="0.2505" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_main_add_24dp.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_main_search_24dp.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ic_toolbar_location_24dp.xml" value="0.173" />
@@ -74,8 +76,12 @@
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ripple_main_button_add.xml" value="0.145" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ripple_main_button_temp.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/ripple_main_button_trans.xml" value="0.145" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/selector_add_ingr_name.xml" value="0.1845" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_image_rounding.xml" value="0.277" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_ingr_add_button_bottom.xml" value="0.2505" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_ingr_add_button_image.xml" value="0.2385" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_ingr_add_button_spinner.xml" value="0.2505" />
+        <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_ingr_add_button_undo.xml" value="0.2505" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_main_button_add.xml" value="0.3535" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_main_button_ingr.xml" value="0.3455" />
         <entry key="..\:/Users/Songmo_Kang/desktop shortcut/open/fridge-rescuer/fridge-rescuer-android/presentation/src/main/res/drawable/shape_main_button_temp.xml" value="0.3455" />
