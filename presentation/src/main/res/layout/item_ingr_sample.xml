@@ -6,7 +6,7 @@
     <data>
         <variable
             name="model"
-            type="com.fridgerescuer.domain.model.ingr.IngrSample" />
+            type="com.fridgerescuer.domain.model.myingr.MyIngrSample" />
         <variable
             name="vm"
             type="com.fridgerescuer.presentation.views.main.MainViewModel" />

@@ -6,12 +6,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.fridgerescuer.domain.model.ingr.IngrSample
+import com.fridgerescuer.domain.model.myingr.MyIngrSample
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.databinding.ItemIngrSampleBinding
 
-class IngrSampleAdapter(private val itemClick: (IngrSample) -> Unit):
-    ListAdapter<IngrSample, IngrSampleAdapter.ViewHolder>(
+class IngrSampleAdapter(private val itemClick: (MyIngrSample) -> Unit):
+    ListAdapter<MyIngrSample, IngrSampleAdapter.ViewHolder>(
         diffUtil
     ) {
 
@@ -39,18 +39,18 @@ class IngrSampleAdapter(private val itemClick: (IngrSample) -> Unit):
     class ViewHolder(private val binding: ItemIngrSampleBinding):
             RecyclerView.ViewHolder(binding.root) {
 
-                fun bind(ingrSample: IngrSample) {
-                    binding.model = ingrSample
+                fun bind(myIngrSample: MyIngrSample) {
+                    binding.model = myIngrSample
                     binding.executePendingBindings()
                 }
     }
 
     companion object {
-        val diffUtil = object: DiffUtil.ItemCallback<IngrSample>() {
-            override fun areContentsTheSame(oldItem: IngrSample, newItem: IngrSample) =
+        val diffUtil = object: DiffUtil.ItemCallback<MyIngrSample>() {
+            override fun areContentsTheSame(oldItem: MyIngrSample, newItem: MyIngrSample) =
                 oldItem == newItem
 
-            override fun areItemsTheSame(oldItem: IngrSample, newItem: IngrSample) =
+            override fun areItemsTheSame(oldItem: MyIngrSample, newItem: MyIngrSample) =
                 oldItem.id == newItem.id
         }
     }

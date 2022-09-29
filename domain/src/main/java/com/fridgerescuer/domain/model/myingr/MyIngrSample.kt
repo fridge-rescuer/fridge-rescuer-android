@@ -1,8 +1,8 @@
-package com.fridgerescuer.domain.model.ingr
+package com.fridgerescuer.domain.model.myingr
 
 import android.graphics.Bitmap
 
-data class IngrSample(
+data class MyIngrSample(
     val id: Int,
     val ingr_name: String,
     val due_date: String,

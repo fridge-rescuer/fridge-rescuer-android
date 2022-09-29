@@ -17,17 +17,16 @@ object RoomModule {
 
     @Singleton
     @Provides
-    fun provideIngrDao(myIngrDatabase: MyIngrDatabase): MyIngrDao {
-        return myIngrDatabase.myIngrDao()
-    }
-
-    @Singleton
-    @Provides
-    fun provideIngrRoom(@ApplicationContext context: Context): MyIngrDatabase {
+    fun provideMyIngrRoom(@ApplicationContext context: Context): MyIngrDatabase {
         return Room.databaseBuilder(
             context,
             MyIngrDatabase::class.java,
-            "Ingr.db"
+            "myIngr.db"
         ).build()
+    }
+    @Singleton
+    @Provides
+    fun provideMyIngrDao(myIngrDatabase: MyIngrDatabase): MyIngrDao {
+        return myIngrDatabase.myIngrDao()
     }
 }

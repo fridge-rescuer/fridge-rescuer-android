@@ -163,7 +163,7 @@
                                 android:orientation="horizontal"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintEnd_toStartOf="@id/add_layout"
-                                bind:setIngrSamples="@{vm.ingrSampleList}" />
+                                bind:setIngrSamples="@{vm.myIngrSampleList}" />
 
                             <com.facebook.shimmer.ShimmerFrameLayout
                                 android:id="@+id/ingr_shimmer"

@@ -2,26 +2,23 @@ package com.fridgerescuer.presentation.views.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.fridgerescuer.domain.model.ingr.IngrSample
+import com.fridgerescuer.domain.model.myingr.MyIngrSample
 import com.fridgerescuer.domain.model.recipe.Recipe
-import com.fridgerescuer.domain.usecase.ingr.GetSomeIngrSampleUseCase
+import com.fridgerescuer.domain.usecase.ingr.GetSomeMyIngrSampleUseCase
 import com.fridgerescuer.domain.usecase.recipe.GetRecipeUseCase
 import com.fridgerescuer.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val getSomeIngrSampleUseCase: GetSomeIngrSampleUseCase,
+    private val getSomeMyIngrSampleUseCase: GetSomeMyIngrSampleUseCase,
     private val getRecipeUseCase: GetRecipeUseCase
 ): BaseViewModel() {
-
-
-    private val _ingrSampleList = MutableLiveData<MutableList<IngrSample>>()
-    val ingrSampleList: LiveData<MutableList<IngrSample>> get() = _ingrSampleList
+    private val _My_ingrSampleList = MutableLiveData<MutableList<MyIngrSample>>()
+    val myIngrSampleList: LiveData<MutableList<MyIngrSample>> get() = _My_ingrSampleList
 
     private val _ingrSampleLoading = MutableLiveData<Boolean>(false)
 
@@ -35,13 +32,13 @@ class MainViewModel @Inject constructor(
 
     fun requestCloseIngrSample() {
         compositeDisposable.add(
-            getSomeIngrSampleUseCase()
+            getSomeMyIngrSampleUseCase()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe { _ingrSampleLoading.value = true }
                 .doAfterTerminate { _ingrSampleLoading.value = false }
                 .subscribe { ingrSample ->
-                    _ingrSampleList.value = ingrSample as ArrayList<IngrSample>
+                    _My_ingrSampleList.value = ingrSample as ArrayList<MyIngrSample>
                 }
         )
     }

@@ -22,12 +22,21 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
 
     @Override
     override fun initView() {
+        // set databinding
         binding.vm = viewModel
 
+        // set toolbar button
         initToolBar()
+
         initButtons()
+
+        // set MyIngrs adapter connection and click action
         initMyIngrs()
+
+        //
         initDietInfo()
+
+        // set custom StickyScroll toolbar change
         initStickyScroll()
     }
 
@@ -66,8 +75,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
         viewModel.requestCloseIngrSample()
 
         ingrSampleAdapter = IngrSampleAdapter { ingrSample ->
-            if (ingrSample.id != null)
-                findNavController().navigate(MainFragmentDirections.actionMainFragmentToMyIngrFragment(ingrSample.id))
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToMyIngrFragment(ingrSample.id))
         }
         binding.ingrRecyclerView.adapter = ingrSampleAdapter
     }

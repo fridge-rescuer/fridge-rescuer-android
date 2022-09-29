@@ -1,11 +1,37 @@
 package com.fridgerescuer.data.mapper
 
-import com.fridgerescuer.data.model.ingr.IngrEntity
-import com.fridgerescuer.domain.model.ingr.Ingr
+import com.fridgerescuer.data.model.myingr.MyIngrEntity
+import com.fridgerescuer.domain.model.myingr.MyIngr
 
-fun mapperToIngr(ingrs: List<IngrEntity>): List<Ingr> {
+fun mapperToIngr(ingr: MyIngrEntity): MyIngr {
+    return MyIngr(
+        ingr.id,
+        ingr.ingr_id,
+        ingr.ingr_name,
+        ingr.exp_date,
+        ingr.storage,
+        ingr.ingr_image,
+        ingr.buy_date,
+        ingr.use_date
+    )
+}
+
+fun mapperToIngrEntity(myIngr: MyIngr): MyIngrEntity {
+    return MyIngrEntity(
+        myIngr.id,
+        myIngr.ingr_id,
+        myIngr.ingr_name,
+        myIngr.exp_date,
+        myIngr.storage,
+        myIngr.ingr_image,
+        myIngr.buy_date,
+        myIngr.use_date
+    )
+}
+
+fun mapperToIngrs(ingrs: List<MyIngrEntity>): List<MyIngr> {
     return ingrs.toList().map {
-        Ingr(
+        MyIngr(
             it.id,
             it.ingr_id,
             it.ingr_name,
@@ -13,17 +39,14 @@ fun mapperToIngr(ingrs: List<IngrEntity>): List<Ingr> {
             it.storage,
             it.ingr_image,
             it.buy_date,
-            it.use_date,
-            it.kcal,
-            it.store_image,
-            it.store_str
+            it.use_date
         )
     }
 }
 
-fun mapperToIngrEntity(ingrs: List<Ingr>): List<IngrEntity> {
-    return ingrs.toList().map {
-        IngrEntity(
+fun mapperToIngrEntities(myIngrs: List<MyIngr>): List<MyIngrEntity> {
+    return myIngrs.toList().map {
+        MyIngrEntity(
             it.id,
             it.ingr_id,
             it.ingr_name,
@@ -31,10 +54,7 @@ fun mapperToIngrEntity(ingrs: List<Ingr>): List<IngrEntity> {
             it.storage,
             it.ingr_image,
             it.buy_date,
-            it.use_date,
-            it.kcal,
-            it.store_image,
-            it.store_str
+            it.use_date
         )
     }
 }

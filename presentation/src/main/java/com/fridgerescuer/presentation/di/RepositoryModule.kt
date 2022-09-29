@@ -1,10 +1,10 @@
 package com.fridgerescuer.presentation.di
 
-import com.fridgerescuer.data.repository.ingr.IngrRepositoryImpl
-import com.fridgerescuer.data.repository.ingr.local.IngrLocalDataSource
+import com.fridgerescuer.data.repository.ingr.MyMyIngrRepositoryImpl
+import com.fridgerescuer.data.repository.ingr.local.MyIngrLocalDataSource
 import com.fridgerescuer.data.repository.recipe.RecipeRepositoryImpl
 import com.fridgerescuer.data.repository.recipe.remote.RecipeRemoteDataSource
-import com.fridgerescuer.domain.repository.IngrRepository
+import com.fridgerescuer.domain.repository.MyIngrRepository
 import com.fridgerescuer.domain.repository.RecipeRepository
 import dagger.Module
 import dagger.Provides
@@ -18,10 +18,10 @@ object RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideIngrRepository(
-        ingrLocalDataSource: IngrLocalDataSource
-    ): IngrRepository {
-        return IngrRepositoryImpl(ingrLocalDataSource)
+    fun provideMyIngrRepository(
+        myIngrLocalDataSource: MyIngrLocalDataSource
+    ): MyIngrRepository {
+        return MyMyIngrRepositoryImpl(myIngrLocalDataSource)
     }
 
     @Singleton

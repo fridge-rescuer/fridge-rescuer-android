@@ -1,17 +1,19 @@
-package com.fridgerescuer.domain.model.ingr
+package com.fridgerescuer.domain.model.myingr
 
+import android.graphics.drawable.BitmapDrawable
+import com.fridgerescuer.domain.R
 import java.time.Duration
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 
-fun mapperToIngrSample(ingrs: List<Ingr>): List<IngrSample> {
-    return ingrs.toList().map {
-        IngrSample(
+fun mapperToIngrSample(myIngrs: List<MyIngr>): List<MyIngrSample> {
+    return myIngrs.toList().map {
+        MyIngrSample(
             it.id,
             it.ingr_name,
             toRemainingDate(it.exp_date, it.use_date),
-            it.ingr_image
+            it.ingr_image ?: (R.drawable.temp_image_24dp as BitmapDrawable).bitmap
         )
     }
 }
