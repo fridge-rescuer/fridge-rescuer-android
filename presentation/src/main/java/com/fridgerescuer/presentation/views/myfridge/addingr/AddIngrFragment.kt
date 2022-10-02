@@ -1,8 +1,6 @@
 package com.fridgerescuer.presentation.views.myfridge.addingr
 
 import android.app.DatePickerDialog
-import android.content.Context
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.fragment.app.viewModels
@@ -10,9 +8,7 @@ import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseFragment
 import com.fridgerescuer.presentation.databinding.FragmentAddIngrBinding
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.qualifiers.ActivityContext
 import java.util.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class AddIngrFragment: BaseFragment<FragmentAddIngrBinding>(
@@ -27,6 +23,9 @@ class AddIngrFragment: BaseFragment<FragmentAddIngrBinding>(
 
         // set toolbar button
         initToolBar()
+
+        // set autoCompleteTextView
+        initTextView()
 
         // set storage spinner
         initSpinner()
@@ -45,6 +44,19 @@ class AddIngrFragment: BaseFragment<FragmentAddIngrBinding>(
                 else -> false
             }
         }
+    }
+
+    private fun initTextView() {
+        val ingrSearchAdapter = IngrSearchAdapter(requireActivity(), android.R.layout.simple_dropdown_item_1line, arrayListOf())
+        binding.nameEditView.setAdapter(ingrSearchAdapter)
+        binding.nameEditView.setOnItemClickListener { _, _: View?, _: Int, _: Long -> }
+
+        viewModel.nameList.observe(this, androidx.lifecycle.Observer {
+            ingrSearchAdapter.setData(it)
+            ingrSearchAdapter.notifyDataSetChanged()
+        })
+
+        viewModel.getNameList()
     }
 
     private fun initSpinner() {

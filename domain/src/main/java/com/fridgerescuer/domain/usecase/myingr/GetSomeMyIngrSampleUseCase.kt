@@ -1,4 +1,4 @@
-package com.fridgerescuer.domain.usecase.ingr
+package com.fridgerescuer.domain.usecase.myingr
 
 import com.fridgerescuer.domain.model.myingr.MyIngr
 import com.fridgerescuer.domain.model.myingr.MyIngrSample

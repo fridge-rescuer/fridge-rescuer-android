@@ -1,8 +1,8 @@
-package com.fridgerescuer.data.repository.ingr
+package com.fridgerescuer.data.repository.myingr
 
 import com.fridgerescuer.data.mapper.mapperToIngrs
 import com.fridgerescuer.data.mapper.mapperToIngrEntity
-import com.fridgerescuer.data.repository.ingr.local.MyIngrLocalDataSource
+import com.fridgerescuer.data.repository.myingr.local.MyIngrLocalDataSource
 import com.fridgerescuer.domain.model.myingr.MyIngr
 import com.fridgerescuer.domain.repository.MyIngrRepository
 import io.reactivex.rxjava3.core.Completable

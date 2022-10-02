@@ -1,4 +1,4 @@
-package com.fridgerescuer.data.repository.ingr.local
+package com.fridgerescuer.data.repository.myingr.local
 
 import com.fridgerescuer.data.model.myingr.MyIngrEntity
 import io.reactivex.rxjava3.core.Completable

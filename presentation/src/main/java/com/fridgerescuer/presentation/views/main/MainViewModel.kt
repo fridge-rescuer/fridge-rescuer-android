@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.fridgerescuer.domain.model.myingr.MyIngrSample
 import com.fridgerescuer.domain.model.recipe.Recipe
-import com.fridgerescuer.domain.usecase.ingr.GetSomeMyIngrSampleUseCase
+import com.fridgerescuer.domain.usecase.myingr.GetSomeMyIngrSampleUseCase
 import com.fridgerescuer.domain.usecase.recipe.GetRecipeUseCase
 import com.fridgerescuer.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

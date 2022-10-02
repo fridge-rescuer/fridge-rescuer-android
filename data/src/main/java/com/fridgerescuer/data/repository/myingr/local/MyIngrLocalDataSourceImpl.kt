@@ -1,4 +1,4 @@
-package com.fridgerescuer.data.repository.ingr.local
+package com.fridgerescuer.data.repository.myingr.local
 
 import com.fridgerescuer.data.db.myingr.MyIngrDao
 import com.fridgerescuer.data.model.myingr.MyIngrEntity

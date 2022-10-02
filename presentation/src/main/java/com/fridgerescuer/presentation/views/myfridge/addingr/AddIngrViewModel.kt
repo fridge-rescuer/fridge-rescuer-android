@@ -5,7 +5,8 @@ import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.fridgerescuer.domain.model.myingr.MyIngr
-import com.fridgerescuer.domain.usecase.ingr.InsertMyIngrUseCase
+import com.fridgerescuer.domain.usecase.search.GetIngrListUseCase
+import com.fridgerescuer.domain.usecase.myingr.InsertMyIngrUseCase
 import com.fridgerescuer.presentation.R
 import com.fridgerescuer.presentation.base.BaseViewModel
 import com.fridgerescuer.presentation.utils.VectorToBitmap
@@ -13,16 +14,23 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
+import io.reactivex.rxjava3.subjects.BehaviorSubject
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @HiltViewModel
 class AddIngrViewModel @Inject constructor(
+    private val getIngrListUseCase: GetIngrListUseCase,
     private val insertMyIngrUseCase: InsertMyIngrUseCase,
     @ApplicationContext private val contextApp: Context
 ): BaseViewModel() {
 
-    private var currentName: String = ""
     val name = MutableLiveData<String>("")
+
+    private val _nameList = MutableLiveData<List<String>>()
+    val nameList: LiveData<List<String>> get() = _nameList
+
+    val autoTextBehaviorSubject = BehaviorSubject.create<String>()
 
     private val _expDate = MutableLiveData<String>("")
     val expDate: LiveData<String> get() = _expDate
@@ -46,7 +54,7 @@ class AddIngrViewModel @Inject constructor(
 
     private val _image = MutableLiveData<Bitmap?>(null)
     val image: LiveData<Bitmap> get() = bitmapMapper(_image)
-    // function to solve MutableLiveData value is nullable, and to apply the default value when null
+    // function to solve MutableLiveData value nullable, and to apply the default value when null
     private fun bitmapMapper(mutableLiveData: MutableLiveData<Bitmap?>): MutableLiveData<Bitmap> {
         return if (mutableLiveData.value == null)
             MutableLiveData<Bitmap>(VectorToBitmap(contextApp).getBitmapFromVector(R.drawable.ic_temp_image_600dp))
@@ -59,6 +67,21 @@ class AddIngrViewModel @Inject constructor(
 
     private val _alertText = MutableLiveData<String>("")
     val alertText: LiveData<String> get() = _alertText
+
+    fun getNameList() {
+        compositeDisposable.add(
+            autoTextBehaviorSubject
+                .subscribeOn(Schedulers.newThread())
+                .throttleLast(500, TimeUnit.MILLISECONDS)
+                .concatMap { getIngrListUseCase(it, null).toObservable() }
+                .subscribe { _nameList.postValue(it) }
+        )
+    }
+
+    fun onTextChanged(string: CharSequence, start: Int, before: Int, count: Int) {
+        name.value = string.toString()
+        autoTextBehaviorSubject.onNext(name.value ?: "")
+    }
 
     fun addIngr(): Boolean {
         val ingr = makeIngr() ?: return false
@@ -73,15 +96,14 @@ class AddIngrViewModel @Inject constructor(
     }
 
     private fun makeIngr(): MyIngr? {
-        currentName = name.value.toString()
-        if (currentName == "") return null
+        if (name.value.toString() == "") return null
         if (_expDate.value == "") return null
         if (storage == "") return null
 
         return MyIngr(
             0,
             0,
-            currentName,
+            name.value.toString(),
             _expDate.value!!,
             storage,
             _image.value,
